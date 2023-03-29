@@ -111,14 +111,14 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
-                    //BOUTON AJOUTER (AJOUTER)
-                    case R.id.ItmAjouterMotif:
-                    {
-                        //Appeler une activité
-                        Intent intent = new Intent(this, Activity_AjoutMotif.class);
-                        startActivity(intent);
-                        return true;
-            }
+//                    //BOUTON AJOUTER (AJOUTER)
+//                    case R.id.ItmAjouterMotif:
+//                    {
+//                        //Appeler une activité
+//                        Intent intent = new Intent(this, Activity_AjoutMotif.class);
+//                        startActivity(intent);
+//                        return true;
+//                    }
 
             default:
                 return super.onOptionsItemSelected(item);

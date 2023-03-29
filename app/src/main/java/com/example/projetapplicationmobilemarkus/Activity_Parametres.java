@@ -220,8 +220,8 @@ public class Activity_Parametres extends AppCompatActivity {
 //        menu.getItem(1).getIcon().setAlpha(255);
 
         //Paramètre (2)
-        menu.getItem(2).setEnabled(false);
-        menu.getItem(2).getIcon().setAlpha(125);
+        menu.getItem(1).setEnabled(false);
+        menu.getItem(1).getIcon().setAlpha(125);
         return true;
     }
 
@@ -251,15 +251,15 @@ public class Activity_Parametres extends AppCompatActivity {
                 return true;
             }
 
-            //BOUTON AJOUTER (AJOUTER UN MOTIF)
-            case R.id.ItmAjouterMotif:
-            {
-                //Appeler une activité
-                Intent intent = new Intent(this, Activity_AjoutMotif.class);
-                startActivity(intent);
-                finish();
-                return true;
-            }
+//            //BOUTON AJOUTER (AJOUTER UN MOTIF)
+//            case R.id.ItmAjouterMotif:
+//            {
+//                //Appeler une activité
+//                Intent intent = new Intent(this, Activity_AjoutMotif.class);
+//                startActivity(intent);
+//                finish();
+//                return true;
+//            }
 
             default:
                 return super.onOptionsItemSelected(item);

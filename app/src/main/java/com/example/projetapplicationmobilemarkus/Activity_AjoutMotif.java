@@ -166,18 +166,18 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
     //--------------------------------------------------------------------------------------
     // UNLOADUNITY() ---------------------------------------------
-    public void unloadUnity(Boolean doShowToast) {
-        if(isUnityLoaded) {
-            Intent intent = new Intent(this, MainUnityActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            intent.putExtra("doQuit", true);
-            startActivity(intent);
-            isUnityLoaded = false;
-        }
-        else if(doShowToast){
-            Toast.makeText(this, "Allooo", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    public void unloadUnity(Boolean doShowToast) {
+//        if(isUnityLoaded) {
+//            Intent intent = new Intent(this, MainUnityActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//            intent.putExtra("doQuit", true);
+//            startActivity(intent);
+//            isUnityLoaded = false;
+//        }
+//        else if(doShowToast){
+//            Toast.makeText(this, "Allooo", Toast.LENGTH_SHORT).show();
+//        }
+//    }
     //--------------------------------------------------------------------------------------
     // ONCREATEOPTIONSMENU() ---------------------------------------------
     @Override
@@ -196,8 +196,8 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 //        menu.getItem(1).getIcon().setAlpha(125);
 
         //BOUTON PARAMÈTRES (2)
-        menu.getItem(2).setEnabled(true);
-        menu.getItem(2).getIcon().setAlpha(255);
+        menu.getItem(1).setEnabled(true);
+        menu.getItem(1).getIcon().setAlpha(255);
         return true;
     }
 
@@ -228,15 +228,15 @@ public class Activity_AjoutMotif extends AppCompatActivity {
                 return true;
             }
 
-            //BOUTON AJOUTER (AJOUTER UN MOTIF)
-            case R.id.ItmAjouterMotif:
-            {
-                //Appeler une activité
-                Intent intent = new Intent(this, Activity_AjoutMotif.class);
-                startActivity(intent);
-                finish();
-                return true;
-            }
+//            //BOUTON AJOUTER (AJOUTER UN MOTIF)
+//            case R.id.ItmAjouterMotif:
+//            {
+//                //Appeler une activité
+//                Intent intent = new Intent(this, Activity_AjoutMotif.class);
+//                startActivity(intent);
+//                finish();
+//                return true;
+//            }
 
             default:
                 return super.onOptionsItemSelected(item);

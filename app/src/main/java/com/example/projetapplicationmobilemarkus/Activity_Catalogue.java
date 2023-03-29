@@ -177,8 +177,8 @@ public class Activity_Catalogue extends AppCompatActivity implements interfaceGe
 //        menu.getItem(1).getIcon().setAlpha(255);
 
         //Paramètre (2)
-        menu.getItem(2).setEnabled(true);
-        menu.getItem(2).getIcon().setAlpha(255);
+        menu.getItem(1).setEnabled(true);
+        menu.getItem(1).getIcon().setAlpha(255);
 
         return true;
     }
@@ -209,15 +209,15 @@ public class Activity_Catalogue extends AppCompatActivity implements interfaceGe
                 return true;
             }
 
-            //BOUTON AJOUTER (AJOUTER UN MOTIF)
-            case R.id.ItmAjouterMotif:
-            {
-                //Appeler une activité
-                Intent intent = new Intent(this, Activity_AjoutMotif.class);
-                startActivity(intent);
-                finish();
-                return true;
-            }
+//            //BOUTON AJOUTER (AJOUTER UN MOTIF)
+//            case R.id.ItmAjouterMotif:
+//            {
+//                //Appeler une activité
+//                Intent intent = new Intent(this, Activity_AjoutMotif.class);
+//                startActivity(intent);
+//                finish();
+//                return true;
+//            }
 
 
             default:

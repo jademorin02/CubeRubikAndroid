@@ -147,6 +147,17 @@ public class Activity_Modifier extends AppCompatActivity {
         });
     }
 
+
+    //--------------------------------------------------------------------------------------
+    // BTNLOADUNITY() ---------------------------------------------
+    public void btnLoadUnity(View v) {
+//        isUnityLoaded = true;
+
+        //APPEL DE LA PAGE AVEC UNE WEBVIEW
+        Intent intent = new Intent(Activity_Modifier.this, UnityHandlerActivity.class);
+        startActivity(intent);
+    }
+
     //--------------------------------------------------------------------------------------
     // ONRADIOBUTTONCLICKED() ---------------------------------------------
     public void onRadioButtonClicked(View view) {
