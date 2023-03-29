@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayoutTitrePage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beigeLight"
+    android:orientation="vertical"
+    android:textAlignment="center"
+    tools:context=".Activity_Modifier">
+
+    <!-- ______________________ SECTION TITRE MODIFIER + CUBE ______________________-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- TEXTE MODIFIER TITRE -->
+        <TextView
+            android:id="@+id/TvTitreModifierMotif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/orangeLight"
+            android:fontFamily="@font/rubik_mono_one_regular"
+            android:text="@string/modifierMotif"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <!-- ______________________ SCROLL VIEWER ______________________-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ______________________ UNITY ______________________-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <!-- BOUTON IMAGE ALLER DANS UNITY-->
+                <ImageButton
+                    android:id="@+id/ImgBtnUnity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:background="@drawable/btn_custom"
+                    android:backgroundTint="@color/orangeLight"
+                    android:src="@drawable/ic_videogame_foreground"
+                    android:text="@string/creerMotifUnity" />
+
+                <!-- TEXTE UNITY -->
+                <TextView
+                    android:id="@+id/TVUnity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/aideBoutonUnityAjout"
+                    android:textAlignment="viewStart" />
+            </LinearLayout>
+
+            <!-- ______________________ NOM MOTIF ______________________-->
+            <LinearLayout
+                android:id="@+id/LinearLayoutNomMotifModifier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <!-- TEXTE NOM MODIFIER -->
+                    <TextView
+                        android:id="@+id/TvNomMotifModifier"
+                        android:layout_width="71dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        android:text="@string/nomModifierMotifTitre"
+                        android:textStyle="bold" />
+
+                    <!-- MESSAGE D'ERREUR -->
+                    <TextView
+                        android:id="@+id/TVNomMotifErreurModifier"
+                        android:layout_width="228dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"
+                        android:textColor="@color/redLight" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutET_IconNom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/VideGNomMotifModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- ICONE MOTIF NOM -->
+                    <ImageView
+                        android:id="@+id/ImgPattern"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_pattern_ajoutermotif_foreground" />
+
+                    <!-- CHAMPS NOM -->
+                    <EditText
+                        android:id="@+id/ETNomMotifModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="10"
+                        android:hint="@string/champsNom"
+                        android:inputType="textPersonName" />
+
+                    <View
+                        android:id="@+id/VideDNomMotif1Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/VideDNomMotif2Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ______________________ SECTION IMAGE MOTIF ______________________-->
+            <LinearLayout
+                android:id="@+id/LinearLayoutImageMotifModifier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- TEXTE IMAGE MOTIFIER -->
+                    <TextView
+                        android:id="@+id/TVImageMotifModifier"
+                        android:layout_width="122dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/imageModifierMotifTitre"
+                        android:textStyle="bold" />
+
+                    <!-- MESSAGE D'ERREUR -->
+                    <TextView
+                        android:id="@+id/TVImageMotifErreurModifier"
+                        android:layout_width="232dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/redLight" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutEt_IconImageModifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/VideGImageAjout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- IMAGE PREVIEW DE L'IMAGE DU MOTIF-->
+                    <ImageView
+                        android:id="@+id/IVPreviewImageModifier"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_image_ajout_noir_foreground" />
+
+                    <!--  CHAMPS IMAGE -->
+                    <EditText
+                        android:id="@+id/ETUrlImageModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="10"
+                        android:hint="@string/champsImage"
+                        android:inputType="textUri|textPersonName" />
+
+                    <!-- BOUTON FILE CELLPHONE -->
+                    <ImageButton
+                        android:id="@+id/imgButtonFileModifier"
+                        android:layout_width="match_parent"
+                        android:layout_height="79dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_custom"
+                        app:srcCompat="@drawable/ic_file_foreground_foreground" />
+
+                    <View
+                        android:id="@+id/videDImageAjout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ______________________ SECTION CREATEUR MOTIF ______________________-->
+            <LinearLayout
+                android:id="@+id/LinearLayoutCreateurModifier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- TEXTE CREATEUR -->
+                    <TextView
+                        android:id="@+id/TVCreateurMotifModifier"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/createurModifierMotifTitre"
+                        android:textStyle="bold" />
+
+                    <!-- MESSAGE D'ERREUR -->
+                    <TextView
+                        android:id="@+id/TVCreateurMotifErreurModifier"
+                        android:layout_width="232dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/redLight" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutEt_IconCreateurModifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/VideGCreateurModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- ICONE CREATEUR -->
+                    <ImageView
+                        android:id="@+id/ImgCreateurModifier"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_createur_ajoutermotif_foreground" />
+
+                    <!-- CHAMPS CREATEUR -->
+                    <EditText
+                        android:id="@+id/ETCreateurMotifModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="10"
+                        android:hint="@string/champsCreateur"
+                        android:inputType="textPersonName" />
+
+                    <View
+                        android:id="@+id/VideDCreateur1Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/videDCreateur2Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ______________________ SECTION DATE MOTIF ______________________-->
+            <LinearLayout
+                android:id="@+id/LinearLayoutDateModifier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- TEXTE DATE MODIFIER -->
+                    <TextView
+                        android:id="@+id/TVDateMotifModifier"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/dateModifierMotifTitre"
+                        android:textStyle="bold" />
+
+                    <!-- MESSAGE D'ERREUR -->
+                    <TextView
+                        android:id="@+id/TVDateMotifErreurModifier"
+                        android:layout_width="232dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/redLight" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutEt_IconDateModifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/VideGDateModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- ICONE DATE -->
+                    <ImageView
+                        android:id="@+id/ImgDateModifier"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_date_ajoutermotif_foreground" />
+
+                    <!-- CHAMPS DATE -->
+                    <EditText
+                        android:id="@+id/ETDateMotifModifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="10"
+                        android:inputType="date" />
+
+                    <!-- BOUTON DATE PICKER -->
+                    <ImageButton
+                        android:id="@+id/imgButtonDatePicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="79dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_custom"
+                        app:srcCompat="@drawable/ic_calendar_picker_foreground" />
+
+                    <View
+                        android:id="@+id/videDDate2Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ______________________ SECTION TYPE MOTIF ______________________-->
+            <LinearLayout
+                android:id="@+id/LinearLayoutTypeMotifModifier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- TEXTE TYPE MOTIF -->
+                    <TextView
+                        android:id="@+id/TVTypeMotifModifier"
+                        android:layout_width="84dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/typeModifierMotifTitre"
+                        android:textStyle="bold" />
+
+                    <!-- MESSAGE D'ERREUR -->
+                    <TextView
+                        android:id="@+id/TVTypeMotifErreurModifier"
+                        android:layout_width="232dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/redLight" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutET_IconTypeModifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/VideGTypeModifier"
+                        android:layout_width="39dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- ICONE TYPE -->
+                    <ImageView
+                        android:id="@+id/ImgTypeModifier"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_catalogue_nom_foreground" />
+
+                    <!-- RADIOGROUP -->
+                    <RadioGroup
+                        android:id="@+id/radioGroupeTypeModifier"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <!-- RADIO BOUTON PERSONNALISE -->
+                        <RadioButton
+                            android:id="@+id/BtnRadioPersonnelModifier"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="@string/champsMotifBase" />
+
+                        <!-- RADIO BOUTON BASE -->
+                        <RadioButton
+                            android:id="@+id/BtnRadioBaseModifier"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="@string/champsMotifPersonnalise" />
+
+                    </RadioGroup>
+
+                    <View
+                        android:id="@+id/VideDType1Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/videDType8Modifier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- ______________________ SECTION BOUTON (MODIFIER) ______________________-->
+            <LinearLayout
+                android:id="@+id/LinearLayoutBoutonModifier"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- BOUTON MODIFIER LE MOTIF -->
+                <Button
+                    android:id="@+id/btnModifierMotif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/btn_custom"
+                    android:onClick="gestionClickMotif"
+                    android:text="@string/modifierBouton" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

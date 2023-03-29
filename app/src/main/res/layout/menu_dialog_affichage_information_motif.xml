@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/beigeAlertDialog"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <!-- BOUTON FERMER LE DIALOG -->
+    <ImageButton
+        android:id="@+id/btFermerDialogCatalogue"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/beigeAlertDialog"
+        android:foregroundGravity="left"
+        app:srcCompat="@drawable/ic_close_dialog_x_foreground" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-25dp"
+        android:orientation="horizontal">
+
+        <!-- IMAGE MOTIF AFFICHAGE -->
+        <ImageView
+            android:id="@+id/ImgMotifDialog"
+            android:layout_width="162dp"
+            android:layout_height="174dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_no_image_foreground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- TEXTE NOM MOTIF ALERTDIALOG -->
+            <TextView
+                android:id="@+id/TVNomMotifDialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/nomMotifAlertDialog"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- TEXTE CRÉATEUR DU MOTIF ALERTDIALOG -->
+            <TextView
+                android:id="@+id/TVCreateurDialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="@string/createurMotifAlertDialog"
+                android:textSize="16sp" />
+
+            <!-- TEXTE DATE DE CRÉATION DU MOTIF ALERTDIALOG -->
+            <TextView
+                android:id="@+id/TVDateCreationDialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="@string/dateMotifAlertDialog"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <!-- BOUTON MODIFIER -->
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="49dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_catalogue_nom_foreground" />
+
+        <Button
+            android:id="@+id/btnModifierMotif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FF9800"
+            android:text="Modifier" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="49dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:layerType="hardware"
+            app:srcCompat="@drawable/ic_close_dialog_x_foreground" />
+
+        <Button
+            android:id="@+id/btnSupprimerMotif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="#F44336"
+            android:text="Supprimer" />
+
+    </LinearLayout>
+
+</LinearLayout>

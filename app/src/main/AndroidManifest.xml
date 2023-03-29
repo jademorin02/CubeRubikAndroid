@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- PERMISSIONS -->
+    <!-- INTERNET -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- STORAGE WRITE -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- WRITE EXTERNAL STORAGE -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- VIBRATION -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logomarkus"
+        android:label="MarKus"
+        android:networkSecurityConfig="@xml/configuration_reseau"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- MODIFIER -->
+        <activity
+            android:name=".Activity_Modifier"
+            android:exported="false" />
+
+        <!-- CONNEXION -->
+        <activity
+            android:name=".Connexion_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- PARAMÈTRES -->
+        <activity
+            android:name=".Activity_Parametres"
+            android:exported="false" />
+
+        <!-- AJOUTER -->
+        <activity
+            android:name=".Activity_AjoutMotif"
+            android:exported="false" />
+
+        <!-- CATALOGUE -->
+        <activity
+            android:name=".Activity_Catalogue"
+            android:exported="false" />
+
+        <!-- MAIN -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ProjetApplicationMobileMarKus.NoActionBar">
+        </activity>
+
+        <!-- MAINUNITY -->
+        <activity
+            android:label="@string/app_name"
+            android:name="com.example.projetapplicationmobilemarkus.MainUnityActivity"
+            android:screenOrientation="fullSensor"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:hardwareAccelerated="false"
+            android:process=":Unity">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    -->
+        <color name="blackLight">#FF000000</color>
+        <color name="whiteLight">#FFFFFFFF</color>
+        <color name="redLight">#F44336</color>
+        <color name="redPaleLight">#9FEDA09B</color>
+        <color name="orangeLight">#FF9800</color>
+        <color name="beigeLight">#DFFDF1E6</color>
+        <color name="beigeAlertDialog">#99F8EBDE</color>
+</resources>

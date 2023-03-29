@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beigeLight"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- ______________________ SECTION TITRE CATALOGUE ______________________-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".Activity_Catalogue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- TEXTE TITRE PAGE-->
+            <TextView
+                android:id="@+id/TVTitrePageCatalogue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:text="Catalogue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/rubik_mono_one_regular"
+                />
+
+        </LinearLayout>
+
+        <!-- ______________________ SECTION BOUTON AJOUTER MOTIF ______________________-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+
+            <!-- ICONE AJOUTER CATALOGUE -->
+            <ImageView
+                android:id="@+id/ImgjouterCatalogue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_ajouterico_noir_foreground" />
+
+            <!-- BOUTON AJOUTER -->
+            <Button
+                android:id="@+id/BtnAjouterCatalogue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_custom"
+                android:onClick="clickAjoutCatalogue"
+                android:text="@string/ajouterBouton" />
+
+        </LinearLayout>
+
+        <!-- ______________________ SECTION RECYCLER VIEW ______________________-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RVMotifs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
