@@ -7,14 +7,15 @@
         android:icon="@drawable/ic_catalogue_motif_foreground"
         android:title="ItmCatalogue"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/ItmAjouterMotif"
-        android:icon="@drawable/ic_ajouter_motif_foreground"
-        android:title="ItmAjouterMotif"
-        app:showAsAction="always" />
+<!--    <item-->
+<!--        android:id="@+id/ItmAjouterMotif"-->
+<!--        android:icon="@drawable/ic_ajouter_motif_foreground"-->
+<!--        android:title="ItmAjouterMotif"-->
+<!--        app:showAsAction="always" />-->
     <item
         android:id="@+id/ItmRobot"
-        android:icon="@drawable/ic_robot_foreground"
+        android:icon="@drawable/ic_settings_foreground"
+        android:iconTint="@color/whiteLight"
         android:title="Robot"
         app:showAsAction="always" />
 </menu>

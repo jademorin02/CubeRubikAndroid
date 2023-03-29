@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.company.product.OverrideUnityActivity;
 
 public class MainUnityActivity extends OverrideUnityActivity {
@@ -30,20 +32,20 @@ public class MainUnityActivity extends OverrideUnityActivity {
     }
 
     void handleIntent(Intent intent) {
-//        if(intent == null || intent.getExtras() == null) return;
-//
-//        if(intent.getExtras().containsKey("doQuit"))
-//            if(mUnityPlayer != null) {
-//                finish();
-//            }
+        if(intent == null || intent.getExtras() == null) return;
+
+        if(intent.getExtras().containsKey("doQuit"))
+            if(mUnityPlayer != null) {
+                finish();
+            }
     }
 
     @Override
     protected void showMainActivity(String setToColor) {
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-//        //intent.putExtra("setColor", setToColor);
-//        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        //intent.putExtra("setColor", setToColor);
+        startActivity(intent);
     }
 
     @Override public void onUnityPlayerUnloaded() {

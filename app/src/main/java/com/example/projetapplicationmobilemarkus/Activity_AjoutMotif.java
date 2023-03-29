@@ -1,11 +1,6 @@
 package com.example.projetapplicationmobilemarkus;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,16 +13,14 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.io.IOUtils;
 import com.unity3d.player.UnityPlayerActivity;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -66,8 +59,6 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_motif);
 
-
-
         //FINDVIEWBYID ---------------------------------------------
         //BUTTON - IMAGEBUTTON
         btnAjouterMotif = findViewById(R.id.btnAjouterMotif);
@@ -92,6 +83,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
         //Entrer les valeurs dans les champs de cette position
         Intent intent = getIntent();
+        handleIntent(getIntent());
 
         ETNomMotifAjout.setText(intent.getStringExtra("NomMotif"));
         ETCreateurMotifAjout.setText(intent.getStringExtra("CreateurMotif"));
@@ -106,17 +98,17 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
         idType = 0;
 
-        handleIntent(getIntent());
 
         //CHOISIR UNE IMAGE
-        imgBtnFichierImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                //Appel de la fonction pour le choix d'image dans notre téléphone
-                imageChooser();
-            }
-        });
+        //**** FUTUR FEATURE ****
+//        imgBtnFichierImg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                //Appel de la fonction pour le choix d'image dans notre téléphone
+//                imageChooser();
+//            }
+//        });
     }
 
     //--------------------------------------------------------------------------------------
@@ -131,30 +123,61 @@ public class Activity_AjoutMotif extends AppCompatActivity {
     //--------------------------------------------------------------------------------------
     // HANDLEINTENT() ---------------------------------------------
     void handleIntent(Intent intent) {
-        if (intent == null || intent.getExtras() == null) return;
+//        if (intent == null || intent.getExtras() == null) return;
 
 //        if (intent.getExtras().containsKey("setColor")) {
-////            View v = findViewById(R.id.button2);
-////            switch (intent.getExtras().getString("setColor")) {
-////                case "yellow": v.setBackgroundColor(Color.YELLOW); break;
-////                case "red": v.setBackgroundColor(Color.RED); break;
-////                case "blue": v.setBackgroundColor(Color.BLUE); break;
-////                default: break;
-////        }
+//            View v = findViewById(R.id.button2);
+//            switch (intent.getExtras().getString("setColor")) {
+//                case "yellow": v.setBackgroundColor(Color.YELLOW); break;
+//                case "red": v.setBackgroundColor(Color.RED); break;
+//                case "blue": v.setBackgroundColor(Color.BLUE); break;
+//                default: break;
+//        }
 //        }
     }
 
     //--------------------------------------------------------------------------------------
     // BTNLOADUNITY() ---------------------------------------------
     public void btnLoadUnity(View v) {
-        isUnityLoaded = true;
-        Intent intent = new Intent(this, MainUnityActivity.class);
-        System.out.println("    --------------------------------    " + intent);
+//        isUnityLoaded = true;
 
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        //APPEL DE LA PAGE AVEC UNE WEBVIEW
+        Intent intent = new Intent(Activity_AjoutMotif.this, UnityHandlerActivity.class);
         startActivity(intent);
+//        Intent intent = new Intent(Activity_AjoutMotif.this, MainUnityActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//        startActivity(intent);
+
+
+
+
+//        if(isUnityLoaded == true)
+//        {
+//            Intent intent = new Intent(Activity_AjoutMotif.this, MainUnityActivity.class);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+//            startActivityForResult(intent, 1);
+//        }
+//        else
+//        {
+//        unloadUnity(true);
+//        }
+
     }
 
+    //--------------------------------------------------------------------------------------
+    // UNLOADUNITY() ---------------------------------------------
+    public void unloadUnity(Boolean doShowToast) {
+        if(isUnityLoaded) {
+            Intent intent = new Intent(this, MainUnityActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            intent.putExtra("doQuit", true);
+            startActivity(intent);
+            isUnityLoaded = false;
+        }
+        else if(doShowToast){
+            Toast.makeText(this, "Allooo", Toast.LENGTH_SHORT).show();
+        }
+    }
     //--------------------------------------------------------------------------------------
     // ONCREATEOPTIONSMENU() ---------------------------------------------
     @Override
@@ -168,9 +191,9 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         menu.getItem(0).setEnabled(true);
         menu.getItem(0).getIcon().setAlpha(255);
 
-        //BOUTON AJOUTER (1)
-        menu.getItem(1).setEnabled(false);
-        menu.getItem(1).getIcon().setAlpha(125);
+//        //BOUTON AJOUTER (1)
+//        menu.getItem(1).setEnabled(false);
+//        menu.getItem(1).getIcon().setAlpha(125);
 
         //BOUTON PARAMÈTRES (2)
         menu.getItem(2).setEnabled(true);

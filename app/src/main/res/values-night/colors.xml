@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--  LIGHTMODE  -->
+    <!--  DARKMODE  -->
         <color name="blackLight">#FF000000</color>
         <color name="whiteLight">#FFFFFFFF</color>
         <color name="redLight">#F44336</color>

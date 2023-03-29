@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,12 +25,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.client.android.Intents;
 import com.google.zxing.integration.android.IntentIntegrator;
 
+import java.lang.reflect.Method;
+
 
 public class Activity_Parametres extends AppCompatActivity {
 
     //DÉCLARATIONS
     SurfaceView SVScanner;
     ImageButton imgBtnScanner, imgBtnInspiration, imgBtnExit, imgBtnDarkMode;
+    RadioButton btnRadioLight, btnRadioDark;
+    RadioGroup groupRadioTheme;
+
+    private static final String NIGHT_MODE = "night_mode";
+
+    int theme;
+
 
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 1001;
 
@@ -45,6 +57,12 @@ public class Activity_Parametres extends AppCompatActivity {
         imgBtnExit = findViewById(R.id.imgBtnExit);
         imgBtnInspiration = findViewById(R.id.imgBtnIdeeURL);
         imgBtnScanner = findViewById(R.id.imgBtnScanner);
+
+//        //Set les boutons radio à nul par précaution
+//        btnRadioDark.setChecked(false);
+//        btnRadioLight.setChecked(true);
+//
+//        theme = 0;
 
         //BOUTONSCANNER
         imgBtnScanner.setOnClickListener(new View.OnClickListener() {
@@ -66,10 +84,60 @@ public class Activity_Parametres extends AppCompatActivity {
             }
         });
 
+
         //BOUTONDARKMODE
         imgBtnDarkMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Parametres.this);
+                builder.setCancelable(false);
+
+                view = View.inflate(Activity_Parametres.this, R.layout.menu_dialog_darkmode, null);
+                builder.setView(view);
+
+                AlertDialog alertDialog1 = builder.create();
+
+                //Attributs selon le contexte -
+                ImageButton btClose= view.findViewById(R.id.btFermerDialogCatalogue);
+                groupRadioTheme = view.findViewById(R.id.radioGroupTheme);
+                btnRadioLight = view.findViewById(R.id.radioBtnLight);
+                btnRadioDark = view.findViewById(R.id.radioBtnDark);
+
+                //Bouton CLose pour FERMER l'alertDialog --------------------------------------------------
+                btClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        alertDialog1.dismiss();
+                    }
+                });
+
+//                // Un bouton est coché?
+//                boolean checked = ((RadioButton) view).isChecked();
+
+                //Gestion Bouton Radio --------------------------------------------------
+//                switch(view.getId()) {
+//                    case R.id.radioBtnLight:
+//                        if (checked && btnRadioLight.getText().toString().equals("Thème clair"))
+//                        {
+//                            btnRadioLight.isChecked();
+//                            //Valeur du bouton radio "THÈME CLAIR"
+//                            theme = 1;
+//                        }
+//                        break;
+//                    case R.id.radioBtnDark:
+//                        if (checked && btnRadioDark.getText().toString().equals("Thème sombre"))
+//                        {
+//                            btnRadioDark.isChecked();
+//                            //Valeur du bouton radio "THÈME SOMBRE"
+//                            theme = 2;
+//                        }
+//                        break;
+//                }
+                    alertDialog1.show();
+
+
 
             }
         });
@@ -147,9 +215,9 @@ public class Activity_Parametres extends AppCompatActivity {
         menu.getItem(0).setEnabled(true);
         menu.getItem(0).getIcon().setAlpha(255);
 
-        //Ajouter (1)
-        menu.getItem(1).setEnabled(true);
-        menu.getItem(1).getIcon().setAlpha(255);
+//        //Ajouter (1)
+//        menu.getItem(1).setEnabled(true);
+//        menu.getItem(1).getIcon().setAlpha(255);
 
         //Paramètre (2)
         menu.getItem(2).setEnabled(false);

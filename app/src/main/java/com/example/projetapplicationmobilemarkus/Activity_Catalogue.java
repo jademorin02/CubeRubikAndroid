@@ -172,9 +172,9 @@ public class Activity_Catalogue extends AppCompatActivity implements interfaceGe
         menu.getItem(0).setEnabled(false);
         menu.getItem(0).getIcon().setAlpha(125);
 
-        //Ajouter (1)
-        menu.getItem(1).setEnabled(true);
-        menu.getItem(1).getIcon().setAlpha(255);
+//        //Ajouter (1)
+//        menu.getItem(1).setEnabled(true);
+//        menu.getItem(1).getIcon().setAlpha(255);
 
         //Paramètre (2)
         menu.getItem(2).setEnabled(true);

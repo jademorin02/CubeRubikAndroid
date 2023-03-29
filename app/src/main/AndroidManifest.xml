@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- PERMISSIONS -->
     <!-- INTERNET -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- STORAGE WRITE -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- WRITE EXTERNAL STORAGE -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- CAMERA -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <!-- VIBRATION -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- STORAGE WRITE -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- WRITE EXTERNAL STORAGE -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- CAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- VIBRATION -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -25,13 +20,13 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".UnityHandlerActivity"
+            android:exported="false" />
         <!-- MODIFIER -->
         <activity
             android:name=".Activity_Modifier"
-            android:exported="false" />
-
-        <!-- CONNEXION -->
+            android:exported="false" /> <!-- CONNEXION -->
         <activity
             android:name=".Connexion_Activity"
             android:exported="true">
@@ -40,39 +35,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- PARAMÈTRES -->
+        </activity> <!-- PARAMÈTRES -->
         <activity
             android:name=".Activity_Parametres"
-            android:exported="false" />
-
-        <!-- AJOUTER -->
+            android:exported="false" /> <!-- AJOUTER -->
         <activity
             android:name=".Activity_AjoutMotif"
-            android:exported="false" />
-
-        <!-- CATALOGUE -->
+            android:exported="false" /> <!-- CATALOGUE -->
         <activity
             android:name=".Activity_Catalogue"
-            android:exported="false" />
-
-        <!-- MAIN -->
+            android:exported="false" /> <!-- MAIN -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.ProjetApplicationMobileMarKus.NoActionBar">
-        </activity>
-
-        <!-- MAINUNITY -->
+            android:theme="@style/Theme.ProjetApplicationMobileMarKus.NoActionBar"></activity> <!-- MAINUNITY -->
         <activity
-            android:label="@string/app_name"
-            android:name="com.example.projetapplicationmobilemarkus.MainUnityActivity"
-            android:screenOrientation="fullSensor"
+            android:name=".MainUnityActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:exported="true"
             android:hardwareAccelerated="false"
-            android:process=":Unity">
-        </activity>
+            android:label="@string/app_name"
+            android:process=":Unity"
+            android:screenOrientation="fullSensor"></activity>
     </application>
 
 </manifest>

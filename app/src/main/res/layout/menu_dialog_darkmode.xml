@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/beigeAlertDialog"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+
+    <!-- BOUTON FERMER LE DIALOG -->
+    <ImageButton
+        android:id="@+id/btFermerDialogCatalogue"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/beigeAlertDialog"
+        android:foregroundGravity="left"
+        app:srcCompat="@drawable/ic_close_dialog_x_foreground" />
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radioGroupTheme"
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/radioBtnLight"
+                android:layout_width="127dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/btnRadioLigth" />
+
+            <RadioButton
+                android:id="@+id/radioBtnDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/btnRadioDark" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+</LinearLayout>

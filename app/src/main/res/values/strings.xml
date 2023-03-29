@@ -62,13 +62,13 @@
     <!--_________________________________ SUPPRIMER _________________________________-->
 
 
-
-
     <!--_________________________________ PARAMÈTRES _________________________________-->
     <string name="qr_code">qr_code</string>
     <string name="generate_qr_code">Génerer le code QR</string>
     <string name="tv_idee_url">Inspirations</string>
     <string name="tv_scanner">Scanner un code QR</string>
+    <string name="btnRadioLigth">Thème clair</string>
+    <string name="btnRadioDark">Thème sombre</string>
 
 
     <!--_________________________________ SCANNER CODE QR _________________________________-->
