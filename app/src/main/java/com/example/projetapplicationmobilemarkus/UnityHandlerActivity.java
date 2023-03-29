@@ -13,6 +13,6 @@ public class UnityHandlerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unity_handler);
         WebView myWebView = (WebView) findViewById(R.id.webViewUnity);
-        myWebView.loadUrl("http://www.google.ca");
+        myWebView.loadUrl("http://cours.cegep3r.info/H2023/420606RI/GR04/WebGl/");
     }
 }
