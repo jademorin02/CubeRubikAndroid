@@ -49,7 +49,7 @@
         android:layout_marginBottom="25dp"
         android:fontFamily="@font/roboto_regular"
         android:textColor="@color/redLight"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <!-- CHAMPS NOM UTILISATEUR CONNEXION -->
