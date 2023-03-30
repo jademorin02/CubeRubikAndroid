@@ -3,30 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/beigeLight"
     android:orientation="vertical"
     tools:context=".Activity_Catalogue">
 
     <LinearLayout
         android:id="@+id/LinearLayoutCatalogue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="287dp"
         android:layout_margin="15dp"
         android:background="#97E3E0E0"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/LinearLayoutImage"
-            android:layout_width="128dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
             android:orientation="horizontal">
 
             <!-- IMAGE VIEW DE L'IMAGE DU MOTIF-->
             <ImageView
                 android:id="@+id/IMGMotif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="164dp"
+                android:layout_height="175dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_no_image_foreground" />
         </LinearLayout>
@@ -34,7 +34,7 @@
         <LinearLayout
             android:id="@+id/LinearLayoutNomMotif"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="143dp"
             android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -52,6 +52,7 @@
                 android:id="@+id/TVNomMotif"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:layout_weight="1" />
 
         </LinearLayout>

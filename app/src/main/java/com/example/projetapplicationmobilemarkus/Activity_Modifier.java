@@ -102,13 +102,19 @@ public class Activity_Modifier extends AppCompatActivity {
 
         Picasso.get().load(intent.getStringExtra("imgCreation")).into(IVPreviewImage);
 
-
         //CHOISIR UNE IMAGE
+        //**** FUTUR FEATURE **** - POUR LE MOMENT ON VA CHERCHER UNE IMAGE SUR GOOGLE IMAGE        //CHOISIR UNE IMAGE
         imgBtnFichierModifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                imageChooser();
+                //Nous diriges vers une page url avec des motifs préfait
+                String url = "https://www.google.com/search?q=rubik+patterns+png&tbm=isch&sxsrf=APwXEdfDcH0rwTNat-MT0PI-NAIMeFfN_Q%3A1680190137713&source=hp&biw=581&bih=559&ei=uaolZNKoKYnh0PEPnO2GyAU&iflsig=AOEireoAAAAAZCW4ycGSPu5u8qVGF5gYzOzEcjcHgSJU&ved=0ahUKEwiS6b6C_IP-AhWJMDQIHZy2AVkQ4dUDCAc&uact=5&oq=rubik+patterns+png&gs_lcp=CgNpbWcQAzoHCCMQ6gIQJzoFCAAQgAQ6CAgAEIAEELEDOgQIIxAnOgsIABCABBCxAxCDAToECAAQHjoHCAAQgAQQEzoGCAAQHhATOggIABAFEB4QEzoICAAQCBAeEBM6BggAEAUQHjoGCAAQCBAeUNR6WIiGAmC7hwJoA3AAeACAAWOIAdMKkgECMjCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABCg&sclient=img";
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                //imageChooser();
             }
         });
 

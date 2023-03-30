@@ -28,7 +28,10 @@
     <!--_________________________________ AJOUTER _________________________________-->
     <string name="ajouterMotif">Ajouter un motif</string>
     <string name="creerMotifUnity">Créer un motif dans Unity</string>
-    <string name="aideBoutonUnityAjout">Appuyer sur ce bouton pour créer un motif dans Unity</string>
+    <string name="aideBoutonUnityAjout">Créer un motif dans Unity</string>
+
+    <string name="UnityAjoutMotifTitre">Unity</string>
+    <string name="champsUnity">Json</string>
 
     <string name="nomAjoutMotifTitre">Nom</string>
     <string name="champsNom">Nom du motif</string>

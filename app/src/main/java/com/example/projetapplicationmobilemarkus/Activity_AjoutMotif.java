@@ -37,9 +37,8 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
     //DÉCLARATIONS
 
-//    boolean isUnityLoaded = false;
     EditText ETNomMotifAjout, ETImageAjout, ETDateMotifAjout, ETCreateurMotifAjout, ETJsonMotifAjout;
-    ImageButton imgBtnFichierImg;
+    ImageButton imgBtnFichierImg, imgBtnUnity;
     ImageView IVPreviewImage;
     RadioGroup radioGroupType;
     RadioButton BtnRadioPersonnalise, BtnRadioBase;
@@ -65,6 +64,8 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         btnAjouterMotif = findViewById(R.id.btnAjouterMotif);
         imgBtnFichierImg = findViewById(R.id.imageButtonFileImg);
         IVPreviewImage = findViewById(R.id.IVPreviewImage);
+        imgBtnUnity = findViewById(R.id.imgBtnUnity);
+
 
         //RADIOBUTTON - RADIOGROUP
         BtnRadioBase = findViewById(R.id.BtnRadioBase);
@@ -75,6 +76,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         ETNomMotifAjout = findViewById(R.id.ETNomMotifAjout);
         ETCreateurMotifAjout = findViewById(R.id.ETCreateurMotifAjout);
         ETImageAjout = findViewById(R.id.ETImageAjouter);
+        ETJsonMotifAjout = findViewById(R.id.ETUnityAjouter);
 
         //TEXTVIEW
         TVNomMotifErreur = findViewById(R.id.TVNomMotifErreur);
@@ -100,15 +102,21 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
 
         //CHOISIR UNE IMAGE
-        //**** FUTUR FEATURE ****
-//        imgBtnFichierImg.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v)
-//            {
+        //**** FUTUR FEATURE **** - POUR LE MOMENT ON VA CHERCHER UNE IMAGE SUR GOOGLE IMAGE
+        imgBtnFichierImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Nous diriges vers une page url avec des motifs préfait
+                String url = "https://www.google.com/search?q=rubik+patterns+png&tbm=isch&sxsrf=APwXEdfDcH0rwTNat-MT0PI-NAIMeFfN_Q%3A1680190137713&source=hp&biw=581&bih=559&ei=uaolZNKoKYnh0PEPnO2GyAU&iflsig=AOEireoAAAAAZCW4ycGSPu5u8qVGF5gYzOzEcjcHgSJU&ved=0ahUKEwiS6b6C_IP-AhWJMDQIHZy2AVkQ4dUDCAc&uact=5&oq=rubik+patterns+png&gs_lcp=CgNpbWcQAzoHCCMQ6gIQJzoFCAAQgAQ6CAgAEIAEELEDOgQIIxAnOgsIABCABBCxAxCDAToECAAQHjoHCAAQgAQQEzoGCAAQHhATOggIABAFEB4QEzoICAAQCBAeEBM6BggAEAUQHjoGCAAQCBAeUNR6WIiGAmC7hwJoA3AAeACAAWOIAdMKkgECMjCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABCg&sclient=img";
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
 //                //Appel de la fonction pour le choix d'image dans notre téléphone
 //                imageChooser();
-//            }
-//        });
+            }
+        });
     }
 
     //--------------------------------------------------------------------------------------

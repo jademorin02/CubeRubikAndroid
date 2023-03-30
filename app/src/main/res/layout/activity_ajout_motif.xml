@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="205dp"
+        android:layout_height="230dp"
         android:layout_marginBottom="10dp"
         android:layout_weight="1"
         android:orientation="vertical">
@@ -24,14 +24,15 @@
         <TextView
             android:id="@+id/TvTitreAjoutMotif"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/orangeLight"
             android:fontFamily="@font/rubik_mono_one_regular"
+            android:gravity="center"
             android:text="@string/ajouterMotif"
             android:textAlignment="center"
-            android:textSize="28sp"
+            android:textSize="34sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -44,43 +45,126 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- ______________________ SECTION NOM MOTIF ______________________-->
+
+
+            <!-- ______________________ SECTION IMAGE MOTIF ______________________-->
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <!-- ______________________ SECTION UNITY MOTIF ______________________-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutUnityMotif"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <!-- BOUTON IMAGE ALLER DANS UNITY-->
-                <ImageButton
-                    android:id="@+id/ImgBtnUnity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:background="@drawable/btn_custom"
-                    android:backgroundTint="@color/orangeLight"
-                    android:onClick="btnLoadUnity"
-                    android:src="@drawable/ic_videogame_foreground"
-                    android:text="@string/creerMotifUnity" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <!-- TEXTE UNITY -->
-                <TextView
-                    android:id="@+id/TVUnity"
+                    <!-- MESSAGE D'ERREUR -->
+                    <TextView
+                        android:id="@+id/TVUnityMotifAjout"
+                        android:layout_width="71dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/UnityAjoutMotifTitre"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TVUnityMotifErreur"
+                        android:layout_width="232dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/redLight" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutEt_IconUnityModifier"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/aideBoutonUnityAjout"
-                    android:textAlignment="viewStart" />
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/VideGUnityAjout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <!-- AFFICHAGE DE L'IMAGE -->
+                    <ImageView
+                        android:id="@+id/IVPreviewUnity"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="1" />
+
+                    <!-- CHAMPS IMAGE -->
+                    <EditText
+                        android:id="@+id/ETUnityAjouter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:ems="10"
+                        android:hint="@string/champsUnity"
+                        android:inputType="textUri|textPersonName" />
+
+                    <!-- IMAGE BOUTON FILE CELLPHON -->
+                    <ImageButton
+                        android:id="@+id/imgBtnUnity"
+                        android:layout_width="match_parent"
+                        android:layout_height="79dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg"
+                        android:onClick="btnLoadUnity"
+                        app:srcCompat="@drawable/ic_videogame_foreground" />
+
+                    <View
+                        android:id="@+id/videDUnityAjout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <!-- ______________________ SECTION NOM MOTIF ______________________-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
             <LinearLayout
                 android:id="@+id/LinearLayoutNomMotifAjout"
                 android:layout_width="match_parent"
@@ -89,25 +173,25 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="325dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center">
 
                     <!-- TITRE NOM -->
-                    <TextView
-                        android:id="@+id/TvNomMotifAjout"
-                        android:layout_width="71dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:gravity="start"
-                        android:text="@string/nomAjoutMotifTitre"
-                        android:textStyle="bold" />
 
                     <!-- MESSAGES D'ERREUR-->
                     <TextView
+                        android:id="@+id/TvNomMotifAjout"
+                        android:layout_width="242dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/nomAjoutMotifTitre"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/TVNomMotifErreur"
-                        android:layout_width="228dp"
+                        android:layout_width="280dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
@@ -131,7 +215,7 @@
                     <ImageView
                         android:id="@+id/ImgPattern"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="75dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_pattern_ajoutermotif_foreground" />
 
@@ -162,6 +246,12 @@
 
             <!-- ______________________ SECTION IMAGE MOTIF ______________________-->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/LinearLayoutImageMotif"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -169,25 +259,27 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="325dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <!-- TEXTE IMAGE -->
+
+                    <!-- MESSAGE D'ERREUR -->
                     <TextView
                         android:id="@+id/TVImageMotifAjout"
-                        android:layout_width="122dp"
+                        android:layout_width="71dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="left"
+                        android:gravity="center"
                         android:text="@string/imageAjoutMotifTitre"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <!-- MESSAGE D'ERREUR -->
                     <TextView
                         android:id="@+id/TVImageMotifErreur"
                         android:layout_width="232dp"
@@ -229,9 +321,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
                         android:ems="10"
-                        android:inputType="textUri|textPersonName"
-                        android:hint="@string/champsImage"/>
+                        android:hint="@string/champsImage"
+                        android:inputType="textUri|textPersonName" />
 
                     <!-- IMAGE BOUTON FILE CELLPHON -->
                     <ImageButton
@@ -255,6 +348,12 @@
 
             <!-- ______________________ SECTION CREATEUR MOTIF ______________________-->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/LinearLayoutCreateurAjout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -262,7 +361,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -271,13 +370,14 @@
                     <!-- TEXTE CRÉATEUR -->
                     <TextView
                         android:id="@+id/TVCreateurMotifAjout"
-                        android:layout_width="77dp"
+                        android:layout_width="122dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="left"
+                        android:gravity="center"
                         android:text="@string/createurAjoutMotifTitre"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <!-- MESSAGE D'ERREUR -->
@@ -308,7 +408,7 @@
                     <ImageView
                         android:id="@+id/ImgCreateurAjout"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="75dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_createur_ajoutermotif_foreground" />
 
@@ -319,8 +419,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:hint="@string/champsCreateur"/>
+                        android:hint="@string/champsCreateur"
+                        android:inputType="textPersonName" />
 
                     <View
                         android:id="@+id/VideDCreateur1"
@@ -340,6 +440,12 @@
 
             <!-- ______________________ SECTION TYPE MOTIF ______________________-->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/LinearLayoutTypeMotifAjout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -347,7 +453,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="325dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -361,8 +467,9 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="15dp"
                         android:layout_weight="1"
-                        android:gravity="left"
+                        android:gravity="center"
                         android:text="Type"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <!-- MESSAGE D'ERREUR -->
@@ -393,7 +500,7 @@
                     <ImageView
                         android:id="@+id/ImgTypeAjout"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_catalogue_nom_foreground" />
 
@@ -413,7 +520,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:onClick="onRadioButtonClicked"
-                            android:text="@string/champsMotifPersonnalise" />
+                            android:text="@string/champsMotifPersonnalise"
+                            android:textSize="16sp" />
 
                         <!-- RADIO BOUTON BASE -->
                         <RadioButton
@@ -421,7 +529,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:onClick="onRadioButtonClicked"
-                            android:text="@string/champsMotifBase" />
+                            android:text="@string/champsMotifBase"
+                            android:textSize="16sp" />
 
                     </RadioGroup>
 
@@ -443,23 +552,31 @@
 
             <!-- ______________________ SECTION BOUTON (AJOUTER) ______________________-->
             <LinearLayout
-                android:id="@+id/LinearLayoutBoutonAjouter"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutBoutonAjouter"
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <!-- BOUTON AJOUTER -->
                 <Button
                     android:id="@+id/btnAjouterMotif"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="127dp"
+                    android:layout_height="61dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/btn_custom"
                     android:onClick="gestionClickAjouter"
-                    android:text="@string/ajouterBouton" />
+                    android:text="@string/ajouterBouton"
+                    android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>
