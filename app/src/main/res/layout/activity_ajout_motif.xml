@@ -240,6 +240,7 @@
                         android:layout_height="79dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:background="@drawable/bg"
                         app:srcCompat="@drawable/ic_file_foreground" />
 
                     <View
