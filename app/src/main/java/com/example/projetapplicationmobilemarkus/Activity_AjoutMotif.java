@@ -36,7 +36,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
     //DÉCLARATIONS
 
-    boolean isUnityLoaded = false;
+//    boolean isUnityLoaded = false;
     EditText ETNomMotifAjout, ETImageAjout, ETDateMotifAjout, ETCreateurMotifAjout, ETJsonMotifAjout;
     ImageButton imgBtnFichierImg;
     ImageView IVPreviewImage;
@@ -83,7 +83,6 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
         //Entrer les valeurs dans les champs de cette position
         Intent intent = getIntent();
-        handleIntent(getIntent());
 
         ETNomMotifAjout.setText(intent.getStringExtra("NomMotif"));
         ETCreateurMotifAjout.setText(intent.getStringExtra("CreateurMotif"));
@@ -112,72 +111,14 @@ public class Activity_AjoutMotif extends AppCompatActivity {
     }
 
     //--------------------------------------------------------------------------------------
-    // ONNEWINTENT() ---------------------------------------------
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        handleIntent(intent);
-        setIntent(intent);
-    }
-
-    //--------------------------------------------------------------------------------------
-    // HANDLEINTENT() ---------------------------------------------
-    void handleIntent(Intent intent) {
-//        if (intent == null || intent.getExtras() == null) return;
-
-//        if (intent.getExtras().containsKey("setColor")) {
-//            View v = findViewById(R.id.button2);
-//            switch (intent.getExtras().getString("setColor")) {
-//                case "yellow": v.setBackgroundColor(Color.YELLOW); break;
-//                case "red": v.setBackgroundColor(Color.RED); break;
-//                case "blue": v.setBackgroundColor(Color.BLUE); break;
-//                default: break;
-//        }
-//        }
-    }
-
-    //--------------------------------------------------------------------------------------
     // BTNLOADUNITY() ---------------------------------------------
-    public void btnLoadUnity(View v) {
-//        isUnityLoaded = true;
-
+    public void btnLoadUnity(View v)
+    {
         //APPEL DE LA PAGE AVEC UNE WEBVIEW
         Intent intent = new Intent(Activity_AjoutMotif.this, UnityHandlerActivity.class);
         startActivity(intent);
-//        Intent intent = new Intent(Activity_AjoutMotif.this, MainUnityActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//        startActivity(intent);
-
-
-
-
-//        if(isUnityLoaded == true)
-//        {
-//            Intent intent = new Intent(Activity_AjoutMotif.this, MainUnityActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//            startActivityForResult(intent, 1);
-//        }
-//        else
-//        {
-//        unloadUnity(true);
-//        }
-
     }
 
-    //--------------------------------------------------------------------------------------
-    // UNLOADUNITY() ---------------------------------------------
-//    public void unloadUnity(Boolean doShowToast) {
-//        if(isUnityLoaded) {
-//            Intent intent = new Intent(this, MainUnityActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-//            intent.putExtra("doQuit", true);
-//            startActivity(intent);
-//            isUnityLoaded = false;
-//        }
-//        else if(doShowToast){
-//            Toast.makeText(this, "Allooo", Toast.LENGTH_SHORT).show();
-//        }
-//    }
     //--------------------------------------------------------------------------------------
     // ONCREATEOPTIONSMENU() ---------------------------------------------
     @Override
@@ -191,11 +132,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         menu.getItem(0).setEnabled(true);
         menu.getItem(0).getIcon().setAlpha(255);
 
-//        //BOUTON AJOUTER (1)
-//        menu.getItem(1).setEnabled(false);
-//        menu.getItem(1).getIcon().setAlpha(125);
-
-        //BOUTON PARAMÈTRES (2)
+        //BOUTON PARAMÈTRES (1)
         menu.getItem(1).setEnabled(true);
         menu.getItem(1).getIcon().setAlpha(255);
         return true;
@@ -227,16 +164,6 @@ public class Activity_AjoutMotif extends AppCompatActivity {
                 finish();
                 return true;
             }
-
-//            //BOUTON AJOUTER (AJOUTER UN MOTIF)
-//            case R.id.ItmAjouterMotif:
-//            {
-//                //Appeler une activité
-//                Intent intent = new Intent(this, Activity_AjoutMotif.class);
-//                startActivity(intent);
-//                finish();
-//                return true;
-//            }
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -471,7 +398,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
     {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 1) isUnityLoaded = false;
+//        if(requestCode == 1) isUnityLoaded = false;
 
 //        if(resultCode ==  RESULT_OK)
 //        {

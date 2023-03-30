@@ -172,11 +172,7 @@ public class Activity_Catalogue extends AppCompatActivity implements interfaceGe
         menu.getItem(0).setEnabled(false);
         menu.getItem(0).getIcon().setAlpha(125);
 
-//        //Ajouter (1)
-//        menu.getItem(1).setEnabled(true);
-//        menu.getItem(1).getIcon().setAlpha(255);
-
-        //Paramètre (2)
+        //Paramètre (1)
         menu.getItem(1).setEnabled(true);
         menu.getItem(1).getIcon().setAlpha(255);
 
@@ -208,17 +204,6 @@ public class Activity_Catalogue extends AppCompatActivity implements interfaceGe
                 finish();
                 return true;
             }
-
-//            //BOUTON AJOUTER (AJOUTER UN MOTIF)
-//            case R.id.ItmAjouterMotif:
-//            {
-//                //Appeler une activité
-//                Intent intent = new Intent(this, Activity_AjoutMotif.class);
-//                startActivity(intent);
-//                finish();
-//                return true;
-//            }
-
 
             default:
                 return super.onOptionsItemSelected(item);
