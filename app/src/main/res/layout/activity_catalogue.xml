@@ -52,7 +52,7 @@
             <!-- ICONE AJOUTER CATALOGUE -->
             <ImageView
                 android:id="@+id/ImgjouterCatalogue"
-                android:layout_width="match_parent"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_ajouterico_noir_foreground" />
@@ -64,7 +64,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_custom"
                 android:onClick="clickAjoutCatalogue"
-                android:text="@string/ajouterBouton" />
+                android:text="@string/ajouterBouton"
+                android:textSize="20sp" />
 
         </LinearLayout>
 

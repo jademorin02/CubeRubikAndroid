@@ -29,11 +29,11 @@ import retrofit2.Response;
 public class Activity_Modifier extends AppCompatActivity {
 
     //DÉCLARATIONS
-    EditText ETNomMotifModifier, ETImageModifier, ETDateMotifModifier, ETCreateurMotifModifier;
+    EditText ETNomMotifModifier, ETUnityModifier, ETImageModifier, ETDateMotifModifier, ETCreateurMotifModifier;
     TextView TVNomMotifErreurModifier, TVTypeMotifErreurModifier, TVImageMotifErreurModifier,
              TVCreateurMotifErreurModifier, TVDateMotifErreurModifier ;
     Button btnModifierMotif;
-    ImageButton imgBtnFichierModifier, imgBtnCalendarPicker;
+    ImageButton imgBtnFichierModifier, imgBtnCalendarPicker, imgBtnUnity;
     ImageView IVPreviewImage;
     RadioGroup radioGroupTypeModifier;
     RadioButton BtnRadioPersonnaliseModifier, BtnRadioBaseModifier;
@@ -50,31 +50,34 @@ public class Activity_Modifier extends AppCompatActivity {
         ETNomMotifModifier = findViewById(R.id.ETNomMotifModifier);
         ETCreateurMotifModifier = findViewById(R.id.ETCreateurMotifModifier);
         ETDateMotifModifier = findViewById(R.id.ETDateMotifModifier);
-        ETImageModifier = findViewById(R.id.ETUrlImageModifier);
+        ETImageModifier = findViewById(R.id.ETImageModifier);
+        ETUnityModifier = findViewById(R.id.ETUnityModifier);
 
         //TEXT VIEW
         TVNomMotifErreurModifier = findViewById(R.id.TVNomMotifErreurModifier);
-        TVCreateurMotifErreurModifier = findViewById(R.id.TVCreateurMotifErreurModifier);
-        TVTypeMotifErreurModifier = findViewById(R.id.TVTypeMotifErreurModifier);
-        TVImageMotifErreurModifier = findViewById(R.id.TVImageMotifErreurModifier);
+        TVCreateurMotifErreurModifier = findViewById(R.id.TVCreateurMotifErreur);
+        TVTypeMotifErreurModifier = findViewById(R.id.TVTypeMotifErreur);
+        TVImageMotifErreurModifier = findViewById(R.id.TVImageMotifErreur);
         TVDateMotifErreurModifier = findViewById(R.id.TVDateMotifErreurModifier);
 
         //BUTTON
         btnModifierMotif = findViewById(R.id.btnModifierMotif);
 
         //IMAGE BUTTON
-        imgBtnFichierModifier = findViewById(R.id.imgButtonFileModifier);
+        imgBtnFichierModifier = findViewById(R.id.imageButtonFileImg);
         imgBtnCalendarPicker = findViewById(R.id.imgButtonDatePicker);
+        imgBtnUnity = findViewById(R.id.ImgBtnUnity);
+
 
         //IMAGE VIEW
-        IVPreviewImage = findViewById(R.id.IVPreviewImageModifier);
+        IVPreviewImage = findViewById(R.id.IVPreviewImage);
 
         //RADIO GROUP
-        radioGroupTypeModifier = findViewById(R.id.radioGroupeTypeModifier);
+        radioGroupTypeModifier = findViewById(R.id.radioGroupeType);
 
         //RADIO BUTTON
-        BtnRadioBaseModifier = findViewById(R.id.BtnRadioBaseModifier);
-        BtnRadioPersonnaliseModifier = findViewById(R.id.BtnRadioPersonnelModifier);
+        BtnRadioBaseModifier = findViewById(R.id.BtnRadioBase);
+        BtnRadioPersonnaliseModifier = findViewById(R.id.BtnRadioPersonnel);
 
         //INTENT (PUTEXTRA)
         //Entrer les valeurs dans les champs de cette position
@@ -86,7 +89,9 @@ public class Activity_Modifier extends AppCompatActivity {
         ETCreateurMotifModifier.setText(intent.getStringExtra("source"));
         ETImageModifier.setText(intent.getStringExtra("imgCreation"));
         ETDateMotifModifier.setText(intent.getStringExtra("dateCreation"));
+        ETUnityModifier.setText(intent.getStringExtra("dataJson"));
         Picasso.get().load(intent.getStringExtra("imgCreation"));
+
 
         //Cocher les boutons par défauts (celui qui est déjà choisit)
         if(intent.getIntExtra("idType", -1) == 1)
