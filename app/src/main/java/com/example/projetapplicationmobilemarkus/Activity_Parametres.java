@@ -84,53 +84,53 @@ public class Activity_Parametres extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Parametres.this);
-                builder.setCancelable(false);
-
-                view = View.inflate(Activity_Parametres.this, R.layout.menu_dialog_darkmode, null);
-                builder.setView(view);
-
-                AlertDialog alertDialog1 = builder.create();
-
-                //Attributs selon le contexte -
-                ImageButton btClose= view.findViewById(R.id.btFermerDialogCatalogue);
-                groupRadioTheme = view.findViewById(R.id.radioGroupTheme);
-                btnRadioLight = view.findViewById(R.id.radioBtnLight);
-                btnRadioDark = view.findViewById(R.id.radioBtnDark);
-
-                //Bouton CLose pour FERMER l'alertDialog --------------------------------------------------
-                btClose.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view)
-                    {
-                        alertDialog1.dismiss();
-                    }
-                });
-
-//                // Un bouton est coché?
-//                boolean checked = ((RadioButton) view).isChecked();
-
-                //Gestion Bouton Radio --------------------------------------------------
-//                switch(view.getId()) {
-//                    case R.id.radioBtnLight:
-//                        if (checked && btnRadioLight.getText().toString().equals("Thème clair"))
-//                        {
-//                            btnRadioLight.isChecked();
-//                            //Valeur du bouton radio "THÈME CLAIR"
-//                            theme = 1;
-//                        }
-//                        break;
-//                    case R.id.radioBtnDark:
-//                        if (checked && btnRadioDark.getText().toString().equals("Thème sombre"))
-//                        {
-//                            btnRadioDark.isChecked();
-//                            //Valeur du bouton radio "THÈME SOMBRE"
-//                            theme = 2;
-//                        }
-//                        break;
-//                }
-                    alertDialog1.show();
-
+//                AlertDialog.Builder builder = new AlertDialog.Builder(Activity_Parametres.this);
+//                builder.setCancelable(false);
+//
+//                view = View.inflate(Activity_Parametres.this, R.layout.menu_dialog_darkmode, null);
+//                builder.setView(view);
+//
+//                AlertDialog alertDialog1 = builder.create();
+//
+//                //Attributs selon le contexte -
+//                ImageButton btClose= view.findViewById(R.id.btFermerDialogCatalogue);
+//                groupRadioTheme = view.findViewById(R.id.radioGroupTheme);
+//                btnRadioLight = view.findViewById(R.id.radioBtnLight);
+//                btnRadioDark = view.findViewById(R.id.radioBtnDark);
+//
+//                //Bouton CLose pour FERMER l'alertDialog --------------------------------------------------
+//                btClose.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view)
+//                    {
+//                        alertDialog1.dismiss();
+//                    }
+//                });
+//
+////                // Un bouton est coché?
+////                boolean checked = ((RadioButton) view).isChecked();
+//
+//                //Gestion Bouton Radio --------------------------------------------------
+////                switch(view.getId()) {
+////                    case R.id.radioBtnLight:
+////                        if (checked && btnRadioLight.getText().toString().equals("Thème clair"))
+////                        {
+////                            btnRadioLight.isChecked();
+////                            //Valeur du bouton radio "THÈME CLAIR"
+////                            theme = 1;
+////                        }
+////                        break;
+////                    case R.id.radioBtnDark:
+////                        if (checked && btnRadioDark.getText().toString().equals("Thème sombre"))
+////                        {
+////                            btnRadioDark.isChecked();
+////                            //Valeur du bouton radio "THÈME SOMBRE"
+////                            theme = 2;
+////                        }
+////                        break;
+////                }
+//                    alertDialog1.show();
+//
             }
         });
 
