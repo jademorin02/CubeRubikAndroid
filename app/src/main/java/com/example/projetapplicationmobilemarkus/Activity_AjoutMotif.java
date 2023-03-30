@@ -115,7 +115,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
     // BTNLOADUNITY() ---------------------------------------------
     public void btnLoadUnity(View v)
     {
-        //APPEL DE LA PAGE AVEC UNE WEBVIEW
+        //APPEL DE LA PAGE
         Intent intent = new Intent(Activity_AjoutMotif.this, UnityHandlerActivity.class);
         startActivity(intent);
     }
