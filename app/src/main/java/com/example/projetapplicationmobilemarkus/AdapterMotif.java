@@ -172,7 +172,10 @@ public class AdapterMotif extends RecyclerView.Adapter<AdapterMotif.MonViewHolde
         motif.setdataJson(modele.getdataJson());
 
         notifyItemChanged(index);
-        
+
+
+
+
     }
 
     //--------------------------------------------------------------------------------------

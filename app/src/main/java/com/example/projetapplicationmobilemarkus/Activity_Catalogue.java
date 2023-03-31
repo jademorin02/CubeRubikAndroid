@@ -94,6 +94,7 @@ public class Activity_Catalogue extends AppCompatActivity implements interfaceGe
         recyclerView.setAdapter(MainActivity.adapterMotif);
 
 
+
         //APPEL DE LA FONCTION
         queryMotif();
 
