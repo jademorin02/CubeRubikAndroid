@@ -1,6 +1,8 @@
 package com.example.projetapplicationmobilemarkus;
 
 import android.content.Context;
+import android.graphics.drawable.PictureDrawable;
+import android.transition.Transition;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.caverock.androidsvg.SVG;
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.methods.RequestBuilder;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
 import java.util.List;
 
@@ -49,6 +55,22 @@ public class AdapterMotif extends RecyclerView.Adapter<AdapterMotif.MonViewHolde
     public void onBindViewHolder(@NonNull MonViewHolder holder, int position) {
         Motif motif = listeMotif.get(position);
         holder.TvNomMotif.setText(motif.getNomMotif());
+
+//        if(listeMotif.get(position).getImgCreation().matches(".*\\.(svg)"))
+//        {
+////            // Créer un objet RequestCreator avec Picasso
+////            RequestCreator requestCreator = Picasso.get().load(listeMotif.get(position).getImgCreation()).into(holder.IMGMotif);
+////
+////            // Utiliser AndroidSVG pour convertir l'image en Drawable
+////            PictureDrawable drawable = new PictureDrawable(SVG.getFromInputStream(url.openStream()).renderToPicture());
+////
+////            // Définir le Drawable sur l'objet RequestCreator
+////            requestCreator.placeholder(drawable).error(drawable).into(holder.IMGMotif);
+//
+//        }
+
+
+
         Picasso.get().load(listeMotif.get(position).getImgCreation()).into(holder.IMGMotif);
 
         // Récupérer l'image depuis la base de données et la définir sur l'ImageView
@@ -140,6 +162,7 @@ public class AdapterMotif extends RecyclerView.Adapter<AdapterMotif.MonViewHolde
     public void modifierMotif(int index, Motif modele)
     {
         Motif motif = listeMotif.get(index);
+
         motif.setNomMotif(modele.getNomMotif());
         motif.setIdUser(modele.getIdUser());
         motif.setImgCreation(modele.getImgCreation());
@@ -149,6 +172,7 @@ public class AdapterMotif extends RecyclerView.Adapter<AdapterMotif.MonViewHolde
         motif.setdataJson(modele.getdataJson());
 
         notifyItemChanged(index);
+        
     }
 
     //--------------------------------------------------------------------------------------

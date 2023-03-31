@@ -44,12 +44,12 @@ public class Activity_AjoutMotif extends AppCompatActivity {
     RadioButton BtnRadioPersonnalise, BtnRadioBase;
     int idType;
     int SELECT_PICTURE = 200;
-    TextView TVNomMotifErreur, TVTypeMotifErreur, TVImageMotifErreur, TVCreateurMotifErreur ;
+    TextView TVNomMotifErreur, TVTypeMotifErreur, TVImageMotifErreur, TVCreateurMotifErreur, TVUnityErreur ;
     Button btnAjouterMotif;
     Calendar calendar;
 
     // -------------------------------------------------------------------------
-    String dateCourrante = new SimpleDateFormat("dd-MM-yyyy",
+    String dateCourrante = new SimpleDateFormat("yyyy-MM-dd",
             Locale.CANADA_FRENCH.getDefault()).format(new Date());
 
     //--------------------------------------------------------------------------------------
@@ -83,6 +83,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         TVTypeMotifErreur = findViewById(R.id.TVTypeMotifErreur);
         TVImageMotifErreur = findViewById(R.id.TVImageMotifErreur);
         TVCreateurMotifErreur = findViewById(R.id.TVCreateurMotifErreur);
+        TVUnityErreur = findViewById(R.id.TVUnityMotifErreur);
 
         //Entrer les valeurs dans les champs de cette position
         Intent intent = getIntent();
@@ -108,8 +109,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
             public void onClick(View v)
             {
                 //Nous diriges vers une page url avec des motifs préfait
-                String url = "https://www.google.com/search?q=rubik+patterns+png&tbm=isch&sxsrf=APwXEdfDcH0rwTNat-MT0PI-NAIMeFfN_Q%3A1680190137713&source=hp&biw=581&bih=559&ei=uaolZNKoKYnh0PEPnO2GyAU&iflsig=AOEireoAAAAAZCW4ycGSPu5u8qVGF5gYzOzEcjcHgSJU&ved=0ahUKEwiS6b6C_IP-AhWJMDQIHZy2AVkQ4dUDCAc&uact=5&oq=rubik+patterns+png&gs_lcp=CgNpbWcQAzoHCCMQ6gIQJzoFCAAQgAQ6CAgAEIAEELEDOgQIIxAnOgsIABCABBCxAxCDAToECAAQHjoHCAAQgAQQEzoGCAAQHhATOggIABAFEB4QEzoICAAQCBAeEBM6BggAEAUQHjoGCAAQCBAeUNR6WIiGAmC7hwJoA3AAeACAAWOIAdMKkgECMjCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABCg&sclient=img";
-
+                String url = "https://www.pngall.com/rubiks-cube-png";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -302,9 +302,31 @@ public class Activity_AjoutMotif extends AppCompatActivity {
          //CHAMPS IMAGE ----------------------------------------------------------------------------
          //Vide
          if (ETImageAjout.getText().toString().equals("")) {
-             TVImageMotifErreur.setText("*Veuillez insérer une image (par lien URL ou par vos fichiers)");
+             TVImageMotifErreur.setText("*Veuillez insérer une image (png ou jpg)");
          }
 
+         //Termine PAS par .jpg, .svg ou .png
+         else if((!ETImageAjout.getText().toString().matches(".*\\.(jpg|png)")))
+         {
+             TVImageMotifErreur.setText("*Veuillez insérer un bon format (png ou jpg) ");
+         }
+         //OK
+         else
+         {
+             TVImageMotifErreur.setText("");
+         }
+
+         //CHAMPS UNITY ----------------------------------------------------------------------------
+         //Vide
+         if(ETJsonMotifAjout.getText().toString().equals(""))
+         {
+             TVUnityErreur.setText("*Veuillez entrer un motif à partir d'unity");
+         }
+         //OK
+         else
+         {
+            TVUnityErreur.setText("");
+         }
 
          //CHAMPS CRÉATEUR -------------------------------------------------------------------------
         //Vide
@@ -337,7 +359,9 @@ public class Activity_AjoutMotif extends AppCompatActivity {
             (!ETCreateurMotifAjout.getText().toString().equals(""))                 &&
             (!ETImageAjout.getText().toString().equals(""))                         &&
             (ETCreateurMotifAjout.getText().toString().length() < 255))             &&
-            (ETCreateurMotifAjout.getText().toString().matches("^(?!.*[!@#$%?&*()=+^;,~}{¤¨<>:]).*$")))
+            (ETCreateurMotifAjout.getText().toString().matches("^(?!.*[!@#$%?&*()=+^;,~}{¤¨<>:]).*$")) &&
+            (!ETJsonMotifAjout.getText().toString().equals(""))                     &&
+            (ETImageAjout.getText().toString().matches(".*\\.(jpg|png)")))
          {
              btnAjouterMotif.setEnabled(false);
 

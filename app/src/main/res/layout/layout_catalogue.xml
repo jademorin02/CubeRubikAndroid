@@ -8,55 +8,68 @@
     android:orientation="vertical"
     tools:context=".Activity_Catalogue">
 
-    <LinearLayout
-        android:id="@+id/LinearLayoutCatalogue"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="287dp"
-        android:layout_margin="25dp"
-        android:background="@color/beigeLight"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:id="@+id/LinearLayoutImage"
             android:layout_width="match_parent"
-            android:layout_height="191dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <!-- IMAGE VIEW DE L'IMAGE DU MOTIF-->
-            <ImageView
-                android:id="@+id/IMGMotif"
-                android:layout_width="164dp"
-                android:layout_height="175dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_no_image_foreground" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LinearLayoutNomMotif"
-            android:layout_width="match_parent"
-            android:layout_height="143dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <!-- ICONE NOM MOTIF CATALOGUE -->
-            <ImageView
-                android:id="@+id/ImgIcoNomCatalogue"
-                android:layout_width="153dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_catalogue_nom_foreground" />
-
-            <!-- TEXTE NOM MOTIF-->
-            <TextView
-                android:id="@+id/TVNomMotif"
+            <LinearLayout
+                android:id="@+id/LinearLayoutCatalogue"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center|start"
-                android:textSize="20sp" />
+                android:layout_height="287dp"
+                android:layout_margin="25dp"
+                android:background="@color/beigeLight"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:id="@+id/LinearLayoutImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="191dp"
+                    android:orientation="horizontal">
+
+                    <!-- IMAGE VIEW DE L'IMAGE DU MOTIF-->
+                    <ImageView
+                        android:id="@+id/IMGMotif"
+                        android:layout_width="164dp"
+                        android:layout_height="175dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_no_image_foreground" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutNomMotif"
+                    android:layout_width="match_parent"
+                    android:layout_height="143dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <!-- ICONE NOM MOTIF CATALOGUE -->
+                    <ImageView
+                        android:id="@+id/ImgIcoNomCatalogue"
+                        android:layout_width="153dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_catalogue_nom_foreground" />
+
+                    <!-- TEXTE NOM MOTIF-->
+                    <TextView
+                        android:id="@+id/TVNomMotif"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

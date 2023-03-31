@@ -294,7 +294,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/nomModifierMotifTitre"
+                        android:text="@string/imageModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -400,7 +400,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/nomModifierMotifTitre"
+                        android:text="@string/createurModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -492,7 +492,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/nomModifierMotifTitre"
+                        android:text="@string/dateModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -594,7 +594,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/nomModifierMotifTitre"
+                        android:text="@string/typeModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -700,7 +700,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/btn_custom"
-                    android:onClick="gestionClickAjouter"
+                    android:onClick="gestionClickMotif"
                     android:text="@string/modifierBouton"
                     android:textSize="20sp" />
             </LinearLayout>

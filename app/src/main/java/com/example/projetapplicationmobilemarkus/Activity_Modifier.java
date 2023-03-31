@@ -115,8 +115,7 @@ public class Activity_Modifier extends AppCompatActivity {
             public void onClick(View v)
             {
                 //Nous diriges vers une page url avec des motifs préfait
-                String url = "https://www.google.com/search?q=rubik+patterns+png&tbm=isch&sxsrf=APwXEdfDcH0rwTNat-MT0PI-NAIMeFfN_Q%3A1680190137713&source=hp&biw=581&bih=559&ei=uaolZNKoKYnh0PEPnO2GyAU&iflsig=AOEireoAAAAAZCW4ycGSPu5u8qVGF5gYzOzEcjcHgSJU&ved=0ahUKEwiS6b6C_IP-AhWJMDQIHZy2AVkQ4dUDCAc&uact=5&oq=rubik+patterns+png&gs_lcp=CgNpbWcQAzoHCCMQ6gIQJzoFCAAQgAQ6CAgAEIAEELEDOgQIIxAnOgsIABCABBCxAxCDAToECAAQHjoHCAAQgAQQEzoGCAAQHhATOggIABAFEB4QEzoICAAQCBAeEBM6BggAEAUQHjoGCAAQCBAeUNR6WIiGAmC7hwJoA3AAeACAAWOIAdMKkgECMjCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABCg&sclient=img";
-
+                String url = "https://www.pngall.com/rubiks-cube-png";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -252,17 +251,35 @@ public class Activity_Modifier extends AppCompatActivity {
               TVDateMotifErreurModifier.setText("");
           }
 
-        //CHAMPS IMAGE -------------------------------------
-          //Vide
-          if(ETImageModifier.getText().toString().equals(""))
-          {
-              TVImageMotifErreurModifier.setText("*Veuillez entrer une image");
-          }
-          //OK
-          else
-          {
-              TVImageMotifErreurModifier.setText("");
-          }
+            //CHAMPS IMAGE ----------------------------------------------------------------------------
+            //Vide
+            if (ETImageModifier.getText().toString().equals(""))
+            {
+                TVImageMotifErreurModifier.setText("*Veuillez insérer une image (png ou jpg)");
+            }
+
+            //Termine PAS par .jpg, .svg ou .png
+            else if((!ETImageModifier.getText().toString().matches(".*\\.(jpg|png)")))
+            {
+                TVImageMotifErreurModifier.setText("*Veuillez insérer un bon format (png ou jpg) ");
+            }
+            //OK
+            else
+            {
+                TVImageMotifErreurModifier.setText("");
+            }
+
+            //CHAMPS UNITY ----------------------------------------------------------------------------
+            //Vide
+            if(ETUnityModifier.getText().toString().equals(""))
+            {
+                TVUnityMotifErreur.setText("*Veuillez entrer un motif à partir d'unity");
+            }
+            //OK
+            else
+            {
+                TVUnityMotifErreur.setText("");
+            }
 
         //CHAMPS CRÉATEUR -------------------------------------
           //Vide
@@ -300,6 +317,7 @@ public class Activity_Modifier extends AppCompatActivity {
              (ETDateMotifModifier.getText().toString().matches("^[0-9]{4}-[0-9]{2}-[0-9]{2}$")) &&
              (ETDateMotifModifier.getText().toString().length() == 10) &&
              (!ETImageModifier.getText().toString().equals("")) &&
+             (ETImageModifier.getText().toString().matches(".*\\.(jpg|png)")) &&
              (!ETCreateurMotifModifier.getText().toString().equals("")) &&
              (ETCreateurMotifModifier.getText().toString().matches("^(?!.*[!@#$%?&*()=+^;,~}{¤¨<>:]).*$")) &&
              (ETCreateurMotifModifier.getText().toString().length() < 255)  &&
@@ -334,6 +352,7 @@ public class Activity_Modifier extends AppCompatActivity {
 
                           if(message.equals("1"))
                           {
+                              btnModifierMotif.setEnabled(false);
                              // m.setIdMotif(Integer.parseInt(message));
                               MainActivity.adapterMotif.modifierMotif(m.idMotif, m);
                               finish();
@@ -341,7 +360,8 @@ public class Activity_Modifier extends AppCompatActivity {
 
                           else
                           {
-                              System.out.println(idType);
+                              btnModifierMotif.setEnabled(true);
+                              System.out.println(idMotif);
                               System.out.println("ERREUR de modification");
                           }
 
