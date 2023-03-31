@@ -14,13 +14,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.unity3d.player.UnityPlayerActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -68,7 +65,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
 
         //RADIOBUTTON - RADIOGROUP
-        BtnRadioBase = findViewById(R.id.BtnRadioBase);
+        BtnRadioBase = findViewById(R.id.btnRadioBase);
         BtnRadioPersonnalise = findViewById(R.id.BtnRadioPersonnel);
         radioGroupType = findViewById(R.id.radioGroupeType);
 
@@ -91,7 +88,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
         ETNomMotifAjout.setText(intent.getStringExtra("NomMotif"));
         ETCreateurMotifAjout.setText(intent.getStringExtra("CreateurMotif"));
         ETImageAjout.setText(intent.getStringExtra("ImageMotif"));
-        //ETJsonMotifAjout.setText(intent.getStringExtra("dataJson"));
+        ETJsonMotifAjout.setText(intent.getStringExtra("dataJson"));
 
         calendar = Calendar. getInstance();
 
@@ -232,8 +229,8 @@ public class Activity_AjoutMotif extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch(view.getId()) {
-            case R.id.BtnRadioBase:
-                if (checked && BtnRadioBase.getText().toString().equals("Motif de base"))
+            case R.id.btnRadioBase:
+                if (checked && BtnRadioBase.getText().toString().equals("Base"))
                 {
                     BtnRadioBase.isChecked();
                     //Valeur du bouton radio "MOTIF DE BASE"
@@ -387,6 +384,7 @@ public class Activity_AjoutMotif extends AppCompatActivity {
                      try {
                          message = response.body().string();
                          System.out.println(message);
+                         System.out.println(idType);
                          m.setIdMotif(Integer.parseInt(message));
                          MainActivity.adapterMotif.ajouterMotif(m);
                          Intent intent = new Intent(Activity_AjoutMotif.this, Activity_Catalogue.class);

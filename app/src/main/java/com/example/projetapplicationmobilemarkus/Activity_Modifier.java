@@ -77,7 +77,7 @@ public class Activity_Modifier extends AppCompatActivity {
         radioGroupTypeModifier = findViewById(R.id.radioGroupeType);
 
         //RADIO BUTTON
-        BtnRadioBaseModifier = findViewById(R.id.BtnRadioBase);
+        BtnRadioBaseModifier = findViewById(R.id.btnRadioBase);
         BtnRadioPersonnaliseModifier = findViewById(R.id.BtnRadioPersonnel);
 
         //INTENT (PUTEXTRA)
@@ -177,8 +177,8 @@ public class Activity_Modifier extends AppCompatActivity {
 
         // Vérifier quel bouton radio à été cocher
         switch(view.getId()) {
-            case R.id.BtnRadioBase:
-                if (checked && BtnRadioBaseModifier.getText().toString().equals("Motif de base"))
+            case R.id.btnRadioBase:
+                if (checked && BtnRadioBaseModifier.getText().toString().equals("Base"))
                 {
                     BtnRadioBaseModifier.isChecked();
                     //Valeur du bouton radio "MOTIF DE BASE"

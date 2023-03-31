@@ -402,7 +402,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/imageModifierMotifTitre"
+                        android:text="@string/createurAjoutMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -562,7 +562,7 @@
 
                         <!-- RADIO BOUTON BASE -->
                         <RadioButton
-                            android:id="@+id/BtnRadioBase"
+                            android:id="@+id/btnRadioBase"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:onClick="onRadioButtonClicked"

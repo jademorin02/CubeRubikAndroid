@@ -651,7 +651,7 @@
 
                         <!-- RADIO BOUTON BASE -->
                         <RadioButton
-                            android:id="@+id/BtnRadioBase"
+                            android:id="@+id/btnRadioBase"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:onClick="onRadioButtonClicked"
