@@ -31,7 +31,7 @@ public class Activity_Modifier extends AppCompatActivity {
     //DÉCLARATIONS
     EditText ETNomMotifModifier, ETUnityModifier, ETImageModifier, ETDateMotifModifier, ETCreateurMotifModifier;
     TextView TVNomMotifErreurModifier, TVTypeMotifErreurModifier, TVImageMotifErreurModifier,
-             TVCreateurMotifErreurModifier, TVDateMotifErreurModifier ;
+             TVCreateurMotifErreurModifier, TVDateMotifErreurModifier, TVUnityMotifErreur ;
     Button btnModifierMotif;
     ImageButton imgBtnFichierModifier, imgBtnCalendarPicker, imgBtnUnity;
     ImageView IVPreviewImage;
@@ -59,6 +59,7 @@ public class Activity_Modifier extends AppCompatActivity {
         TVTypeMotifErreurModifier = findViewById(R.id.TVTypeMotifErreur);
         TVImageMotifErreurModifier = findViewById(R.id.TVImageMotifErreur);
         TVDateMotifErreurModifier = findViewById(R.id.TVDateMotifErreurModifier);
+        TVUnityMotifErreur = findViewById(R.id.TVUnityMotifErreurModif);
 
         //BUTTON
         btnModifierMotif = findViewById(R.id.btnModifierMotif);
@@ -286,6 +287,11 @@ public class Activity_Modifier extends AppCompatActivity {
               TVCreateurMotifErreurModifier.setText("");
           }
 
+          if(ETUnityModifier.getText().toString().equals(""))
+          {
+              TVUnityMotifErreur.setText("*Veuillez entrer un motif à partir du bouton");
+          }
+
           //Modifier le motif s'il passe par tous les tests
           if((!ETNomMotifModifier.getText().toString().equals("")) &&
              (ETNomMotifModifier.getText().toString().length() < 255) &&
@@ -296,7 +302,8 @@ public class Activity_Modifier extends AppCompatActivity {
              (!ETImageModifier.getText().toString().equals("")) &&
              (!ETCreateurMotifModifier.getText().toString().equals("")) &&
              (ETCreateurMotifModifier.getText().toString().matches("^(?!.*[!@#$%?&*()=+^;,~}{¤¨<>:]).*$")) &&
-             (ETCreateurMotifModifier.getText().toString().length() < 255))
+             (ETCreateurMotifModifier.getText().toString().length() < 255)  &&
+             (!ETUnityModifier.getText().toString().equals("")))
           {
 
               btnModifierMotif.setEnabled(false);
@@ -306,7 +313,7 @@ public class Activity_Modifier extends AppCompatActivity {
                       ETDateMotifModifier.getText().toString(),
                       ETCreateurMotifModifier.getText().toString(),
                       ETNomMotifModifier.getText().toString(),
-                      ETImageModifier.getText().toString(), ETNomMotifModifier.getText().toString());
+                      ETImageModifier.getText().toString(), ETUnityModifier.getText().toString());
 
               //Modifier le motif
               InterfaceServeur serveur = RetrofitInstance.getInstance().create((InterfaceServeur.class));

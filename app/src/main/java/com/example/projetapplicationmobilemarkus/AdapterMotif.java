@@ -146,6 +146,7 @@ public class AdapterMotif extends RecyclerView.Adapter<AdapterMotif.MonViewHolde
         motif.setIdType(modele.getIdType());
         motif.setSource((modele.getSource()));
         motif.setDateCreation(modele.getDateCreation());
+        motif.setdataJson(modele.getdataJson());
 
         notifyItemChanged(index);
     }

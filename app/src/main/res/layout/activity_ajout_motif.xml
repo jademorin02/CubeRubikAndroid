@@ -76,9 +76,14 @@
                     android:orientation="horizontal">
 
                     <!-- MESSAGE D'ERREUR -->
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="11dp"
+                        android:layout_height="35dp" />
+
                     <TextView
                         android:id="@+id/TVUnityMotifAjout"
-                        android:layout_width="71dp"
+                        android:layout_width="44dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
@@ -95,8 +100,10 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/redLight" />
+                        android:gravity="start"
+                        android:textColor="@color/redLight"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -172,29 +179,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <!-- TITRE NOM -->
+                    <!-- MESSAGE D'ERREUR -->
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="11dp"
+                        android:layout_height="35dp" />
 
-                    <!-- MESSAGES D'ERREUR-->
                     <TextView
                         android:id="@+id/TvNomMotifAjout"
-                        android:layout_width="242dp"
+                        android:layout_width="44dp"
                         android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
                         android:text="@string/nomAjoutMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/TVNomMotifErreur"
-                        android:layout_width="280dp"
+                        android:layout_width="232dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
-                        android:gravity="center"
-                        android:textColor="@color/redLight" />
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:textColor="@color/redLight"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/LinearLayoutET_IconNom"
@@ -262,18 +281,21 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <!-- TEXTE IMAGE -->
-
                     <!-- MESSAGE D'ERREUR -->
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="11dp"
+                        android:layout_height="35dp" />
+
                     <TextView
                         android:id="@+id/TVImageMotifAjout"
-                        android:layout_width="71dp"
+                        android:layout_width="44dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/imageAjoutMotifTitre"
+                        android:text="@string/imageModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -284,8 +306,10 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/redLight" />
+                        android:gravity="start"
+                        android:textColor="@color/redLight"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -364,30 +388,38 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <!-- TEXTE CRÉATEUR -->
+                    <!-- MESSAGE D'ERREUR -->
+                    <View
+                        android:id="@+id/view5"
+                        android:layout_width="11dp"
+                        android:layout_height="35dp" />
+
                     <TextView
                         android:id="@+id/TVCreateurMotifAjout"
-                        android:layout_width="122dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="44dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/createurAjoutMotifTitre"
+                        android:text="@string/imageModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <!-- MESSAGE D'ERREUR -->
                     <TextView
                         android:id="@+id/TVCreateurMotifErreur"
                         android:layout_width="232dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/redLight" />
+                        android:gravity="start"
+                        android:textColor="@color/redLight"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/LinearLayoutEt_IconCreateur"
@@ -450,6 +482,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -457,20 +490,24 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <!-- TEXTE TYPE -->
+                    <!-- MESSAGE D'ERREUR -->
+                    <View
+                        android:id="@+id/view6"
+                        android:layout_width="11dp"
+                        android:layout_height="35dp" />
+
                     <TextView
                         android:id="@+id/TVTypeMotifAjout_"
-                        android:layout_width="84dp"
+                        android:layout_width="44dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Type"
+                        android:text="@string/typeModifierMotifTitre"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <!-- MESSAGE D'ERREUR -->
                     <TextView
                         android:id="@+id/TVTypeMotifErreur"
                         android:layout_width="232dp"
@@ -478,8 +515,10 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:textColor="@color/redLight" />
+                        android:gravity="start"
+                        android:textColor="@color/redLight"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
